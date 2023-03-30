@@ -17,13 +17,13 @@ Network (PXE) boot supports the following live CD or installation distros.
 2. Check out this project code on the TFTP server  
     `git clone --depth 1 git@github.com:paulmaunders/TFTP-PXE-Boot-Server.git .`
 3. Ensure TFTP server root points at this project folder
-    * Debug TFTP server as per instructions [below](#Debug_TFTP_server)
+    * Debug TFTP server as per instructions [below](#Debug-TFTP-server)
 4. Set up your DHCP to use TFTP server
     * Use DHCP option 66 "next-server" if located on a different IP to the DHCP server
     * DHCP should offer the PXELINUX.0 as the boot filename (DHCP option 67)
     * Follow [these](https://community.synology.com/enu/forum/2/post/124897) instructions on Synology router
 5. Optionally edit the _pxelinux.cfg/default_ file to add in your PXE boot options
-6. Download and configure each bootstrap program you require as per instructions. Bootstraps are *not* committed to this repository due to their size.
+6. Download and configure each bootstrap program you require as per instructions. Bootstraps are **not** committed to this repository due to their size.
     * Alpine Linux (TODO)
     * CentOS (TODO)
     * [CloneZilla Live](#CloneZilla-Live-instructions)
