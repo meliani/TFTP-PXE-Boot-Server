@@ -26,7 +26,7 @@ Network (PXE) boot supports the following live CD or installation distros.
 1. Download and configure each bootstrap program you require as per instructions. Bootstraps are not committed to this repository due to their size.
   * Alpine Linux (TODO)
   * CentOS (TODO)
-  * CloneZilla Live (TODO)
+  * [CloneZilla Live](#CloneZilla_Live_instructions)
   * Fedora (TODO)
   * [GParted Live](#GParted_Live_instructions)
   * Ubuntu Desktop (TODO)
@@ -51,6 +51,27 @@ _tftp_ is the user interface to the Internet TFTP (Trivial File Transfer Protoco
   tftp> quit
   ```
 
+### Alpine Linux instructions
+TODO
+
+### CentOS instructions
+TODO
+
+### CloneZilla Live instructions
+1. Download _amd64_ ISO or ZIP alternative stable release from [here](https://clonezilla.org/downloads/download.php?branch=alternative)
+2. Create image version directory in this project, i.e. `images/clonezilla/20230212-kinetic`
+3. Extract _vmlinuz_, _initrd.img_ and _filesystem.squashfs_ files from `live/` directory of the downloaded archive
+4. Image version directory should look like this
+  > * images/clonezilla/20230212-kinetic/filesystem.squashfs
+  * images/clonezilla/20230212-kinetic/initrd.img
+  * images/clonezilla/20230212-kinetic/vmlinuz
+5. Make sure CloneZilla Live _KERNEL_, _APPEND initrd_ and _APPEND fetch_ paths and TFTP server IP match in _pxelinux.cfg/default_ configuration file
+
+More information can be found [here](https://clonezilla.org/livepxe.php)
+
+### Fedora instructions
+TODO
+
 ### GParted Live instructions
 1. Download _amd64_ ISO or ZIP stable release from [here](https://sourceforge.net/projects/gparted/files/gparted-live-stable/)
 2. Create image version directory in this project, i.e. `images/gparted/1.5.0-1-amd64`
@@ -62,6 +83,15 @@ _tftp_ is the user interface to the Internet TFTP (Trivial File Transfer Protoco
 5. Make sure GParted Live _KERNEL_, _APPEND initrd_ and _APPEND fetch_ paths and TFTP server IP match in _pxelinux.cfg/default_ configuration file
 
 More information can be found [here](https://gparted.org/livepxe.php)
+
+### Ubuntu Desktop instructions
+TODO
+
+### Ubuntu Minimal instructions
+TODO
+
+### Ubuntu Server instructions
+TODO
 
 ---
 ### Further documentation
