@@ -14,7 +14,7 @@ Network (PXE) boot supports the following live CD or installation distros.
 1. Set up a TFTP server
     * You could use http://ww2.unime.it/flr/tftpserver/ for MacOS
     * Follow [these](http://www.pyrosoft.co.uk/blog/2013/01/13/setting-up-a-pxe-boot-server-on-synology-dsm-4-2-beta/) and [these](https://kb.synology.com/en-us/DSM/tutorial/How_to_implement_PXE_with_Synology_NAS) instructions on Synology NAS
-2. Check out this project code on the TFTP server
+2. Check out this project code on the TFTP server  
     `git clone --depth 1 git@github.com:paulmaunders/TFTP-PXE-Boot-Server.git .`
 3. Ensure TFTP server root points at this project folder
     * Debug TFTP server as per instructions [below](#Debug_TFTP_server)
@@ -23,12 +23,12 @@ Network (PXE) boot supports the following live CD or installation distros.
     * DHCP should offer the PXELINUX.0 as the boot filename (DHCP option 67)
     * Follow [these](https://community.synology.com/enu/forum/2/post/124897) instructions on Synology router
 5. Optionally edit the _pxelinux.cfg/default_ file to add in your PXE boot options
-6. Download and configure each bootstrap program you require as per instructions. Bootstraps are not committed to this repository due to their size.
+6. Download and configure each bootstrap program you require as per instructions. Bootstraps are *not* committed to this repository due to their size.
     * Alpine Linux (TODO)
     * CentOS (TODO)
-    * [CloneZilla Live](#CloneZilla_Live_instructions)
+    * [CloneZilla Live](#CloneZilla-Live-instructions)
     * Fedora (TODO)
-    * [GParted Live](#GParted_Live_instructions)
+    * [GParted Live](#GParted-Live-instructions)
     * Ubuntu Desktop (TODO)
     * Ubuntu Minimal (TODO)
     * Ubuntu Server (TODO)
@@ -95,8 +95,11 @@ TODO
 
 ---
 ### Further documentation
-The Syslinux Project https://www.syslinux.org/  
-PXELINUX is a Syslinux derivative for booting from a network server https://wiki.syslinux.org/wiki/index.php?title=PXELINUX
+The Syslinux Project  
+https://www.syslinux.org/  
+
+PXELINUX is a Syslinux derivative for booting from a network server  
+https://wiki.syslinux.org/wiki/index.php?title=PXELINUX
 
 * Configuration introduction can be found [here](https://wiki.syslinux.org/wiki/index.php?title=Config)
 * Advanced menu system configuration documentation can be found [here](https://wiki.syslinux.org/wiki/index.php?title=Menu)
