@@ -1,1 +1,4 @@
 .DS_Store
+vmlinuz
+*.img
+*.squashfs
