@@ -28,7 +28,7 @@ Network (PXE) boot supports the following live CD or installation distros.
   * CentOS (TODO)
   * CloneZilla Live (TODO)
   * Fedora (TODO)
-  * GParted Live (TODO)
+  * [GParted Live](#GParted_Live_instructions)
   * Ubuntu Desktop (TODO)
   * Ubuntu Minimal (TODO)
   * Ubuntu Server (TODO)
@@ -50,6 +50,18 @@ _tftp_ is the user interface to the Internet TFTP (Trivial File Transfer Protoco
   Received 26579 bytes in 0.4 seconds [531580 bits/sec]
   tftp> quit
   ```
+
+### GParted Live instructions
+1. Download _amd64_ ISO or ZIP stable release from [here](https://sourceforge.net/projects/gparted/files/gparted-live-stable/)
+2. Create image version directory in this project, i.e. `images/gparted/1.5.0-1-amd64`
+3. Extract _vmlinuz_, _initrd.img_ and _filesystem.squashfs_ files from `live/` directory of the downloaded archive
+4. Image version directory should look like this
+  > * images/gparted/1.5.0-1-amd64/filesystem.squashfs
+  * images/gparted/1.5.0-1-amd64/initrd.img
+  * images/gparted/1.5.0-1-amd64/vmlinuz
+5. Make sure GParted Live _KERNEL_, _APPEND initrd_ and _APPEND fetch_ paths and TFTP server IP match in _pxelinux.cfg/default_ configuration file
+
+More information can be found [here](https://gparted.org/livepxe.php)
 
 ---
 ### Further documentation
