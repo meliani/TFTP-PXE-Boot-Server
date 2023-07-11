@@ -22,8 +22,10 @@ Network (PXE) boot supports the following live CD or installation distros.
     * Use DHCP option 66 "next-server" if located on a different IP to the DHCP server
     * DHCP should offer the PXELINUX.0 as the boot filename (DHCP option 67)
     * Follow [these](https://community.synology.com/enu/forum/2/post/124897) instructions on Synology router
-5. Optionally edit the _pxelinux.cfg/default_ file to add in your PXE boot options
-6. Download and configure each bootstrap program you require as per instructions. Bootstraps are **not** committed to this repository due to their size.
+5. Optionally edit the _bios/pxelinux.cfg/default_ file to add in your PXE boot options
+6. Create symlink to images in this project folder
+    `ln -s <absolute path>/images/ bios/images`
+7. Download and configure each bootstrap program you require as per instructions. Bootstraps are **not** committed to this repository due to their size.
     * Alpine Linux (TODO)
     * CentOS (TODO)
     * [CloneZilla Live](#CloneZilla-Live-instructions)
@@ -37,17 +39,17 @@ Network (PXE) boot supports the following live CD or installation distros.
 _tftp_ is the user interface to the Internet TFTP (Trivial File Transfer Protocol), which allows users to transfer files to and from a remote machine. The remote host may be specified on the command line, in which case tftp uses host as the default host for future transfers.
 1. Install TFTP client
   ```
-   user:~$ sudo apt update
-   user:~$ sudo apt install tftp
+  user:~$ sudo apt update
+  user:~$ sudo apt install tftp
   ```
 2. Test connection and file download
   ```
   user:~$ tftp 192.168.0.123
   tftp> verbose
   Verbose mode on.
-  tftp> get pxelinux.0
-  getting from 192.168.0.123:pxelinux.0 to pxelinux.0 [netascii]
-  Received 26579 bytes in 0.4 seconds [531580 bits/sec]
+  tftp> get bios/pxelinux.0
+  getting from 192.168.0.123:bios/pxelinux.0 to pxelinux.0 [netascii]
+  Received 46995 bytes in 0.2 seconds [1879800 bits/sec]
   tftp> quit
   ```
 
@@ -65,7 +67,7 @@ TODO
   > * images/clonezilla/20230212-kinetic/filesystem.squashfs
   > * images/clonezilla/20230212-kinetic/initrd.img
   > * images/clonezilla/20230212-kinetic/vmlinuz
-5. Make sure CloneZilla Live _KERNEL_, _APPEND initrd_ and _APPEND fetch_ paths and TFTP server IP match in _pxelinux.cfg/default_ configuration file
+5. Make sure CloneZilla Live _KERNEL_, _APPEND initrd_ and _APPEND fetch_ paths and TFTP server IP match in _bios/pxelinux.cfg/default_ configuration file
 
 More information can be found [here](https://clonezilla.org/livepxe.php)
 
@@ -80,7 +82,7 @@ TODO
   > * images/gparted/1.5.0-1-amd64/filesystem.squashfs
   > * images/gparted/1.5.0-1-amd64/initrd.img
   > * images/gparted/1.5.0-1-amd64/vmlinuz
-5. Make sure GParted Live _KERNEL_, _APPEND initrd_ and _APPEND fetch_ paths and TFTP server IP match in _pxelinux.cfg/default_ configuration file
+5. Make sure GParted Live _KERNEL_, _APPEND initrd_ and _APPEND fetch_ paths and TFTP server IP match in _bios/pxelinux.cfg/default_ configuration file
 
 More information can be found [here](https://gparted.org/livepxe.php)
 
