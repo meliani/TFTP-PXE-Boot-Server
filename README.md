@@ -1,8 +1,8 @@
 # TFTP-PXE-Boot-Server
 
-This project contains the basic files and folder setup needed for a TFTP PXELINUX server.
+This project contains basic files and folder setup needed for a TFTP PXELINUX server.
 
-Network (PXE) boot supports the following live CD or installation distros.
+Network (PXE) boot supports the following live CD or installation distros for BIOS and UEFI **(without Secure Boot yet)** devices.
 * CentOS 6.x
 * CentOS 7.0
 * CloneZilla Live
@@ -22,9 +22,13 @@ Network (PXE) boot supports the following live CD or installation distros.
     * Use DHCP option 66 "next-server" if located on a different IP to the DHCP server
     * DHCP should offer the PXELINUX.0 as the boot filename (DHCP option 67)
     * Follow [these](https://community.synology.com/enu/forum/2/post/124897) instructions on Synology router
-5. Optionally edit the _bios/pxelinux.cfg/default_ file to add in your PXE boot options
-6. Create symlink to images in this project folder
-    `ln -s <absolute path>/images/ bios/images`
+5. Optionally edit the _<architecture>/pxelinux.cfg/default_ files to add your PXE boot options
+6. Create symlinks to images in this project folder
+    ```shell
+    user:~$ ln -s <absolute path>/images/ bios/images
+    user:~$ ln -s <absolute path>/images/ efi32/images
+    user:~$ ln -s <absolute path>/images/ efi64/images
+    ```
 7. Download and configure each bootstrap program you require as per instructions. Bootstraps are **not** committed to this repository due to their size.
     * Alpine Linux (TODO)
     * CentOS (TODO)
@@ -38,12 +42,12 @@ Network (PXE) boot supports the following live CD or installation distros.
 ### Debug TFTP server
 _tftp_ is the user interface to the Internet TFTP (Trivial File Transfer Protocol), which allows users to transfer files to and from a remote machine. The remote host may be specified on the command line, in which case tftp uses host as the default host for future transfers.
 1. Install TFTP client
-  ```
+  ```shell
   user:~$ sudo apt update
   user:~$ sudo apt install tftp
   ```
 2. Test connection and file download
-  ```
+  ```shell
   user:~$ tftp 192.168.0.123
   tftp> verbose
   Verbose mode on.
