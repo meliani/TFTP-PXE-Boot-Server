@@ -71,7 +71,7 @@ TODO
   > * images/clonezilla/20230212-kinetic/filesystem.squashfs
   > * images/clonezilla/20230212-kinetic/initrd.img
   > * images/clonezilla/20230212-kinetic/vmlinuz
-5. Make sure CloneZilla Live _KERNEL_, _APPEND initrd_ and _APPEND fetch_ paths and TFTP server IP match in _bios/pxelinux.cfg/default_ configuration file
+5. Make sure CloneZilla Live _KERNEL_, _APPEND initrd_ and _APPEND fetch_ paths and TFTP server IP match in _<architecture>/pxelinux.cfg/default_ configuration file
 
 More information can be found [here](https://clonezilla.org/livepxe.php)
 
@@ -86,7 +86,7 @@ TODO
   > * images/gparted/1.5.0-1-amd64/filesystem.squashfs
   > * images/gparted/1.5.0-1-amd64/initrd.img
   > * images/gparted/1.5.0-1-amd64/vmlinuz
-5. Make sure GParted Live _KERNEL_, _APPEND initrd_ and _APPEND fetch_ paths and TFTP server IP match in _bios/pxelinux.cfg/default_ configuration file
+5. Make sure GParted Live _KERNEL_, _APPEND initrd_ and _APPEND fetch_ paths and TFTP server IP match in _<architecture>/pxelinux.cfg/default_ configuration file
 
 More information can be found [here](https://gparted.org/livepxe.php)
 
