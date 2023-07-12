@@ -22,7 +22,7 @@ Network (PXE) boot supports the following live CD or installation distros for BI
     * Use DHCP option 66 "next-server" if located on a different IP to the DHCP server
     * DHCP should offer the PXELINUX.0 as the boot filename (DHCP option 67)
     * Follow [these](https://community.synology.com/enu/forum/2/post/124897) instructions on Synology router
-5. Optionally edit the _<architecture>/pxelinux.cfg/default_ files to add your PXE boot options
+5. Optionally edit the <architecture>/pxelinux.cfg/default files to add your PXE boot options
 6. Create symlinks to images in this project folder
     ```shell
     user:~$ ln -s <absolute path>/images/ bios/images
@@ -71,7 +71,7 @@ TODO
   > * images/clonezilla/20230212-kinetic/filesystem.squashfs
   > * images/clonezilla/20230212-kinetic/initrd.img
   > * images/clonezilla/20230212-kinetic/vmlinuz
-5. Make sure CloneZilla Live _KERNEL_, _APPEND initrd_ and _APPEND fetch_ paths and TFTP server IP match in _<architecture>/pxelinux.cfg/default_ configuration file
+5. Make sure CloneZilla Live _KERNEL_, _APPEND initrd_ and _APPEND fetch_ paths and TFTP server IP match in <architecture>/pxelinux.cfg/default configuration file
 
 More information can be found [here](https://clonezilla.org/livepxe.php)
 
@@ -86,7 +86,7 @@ TODO
   > * images/gparted/1.5.0-1-amd64/filesystem.squashfs
   > * images/gparted/1.5.0-1-amd64/initrd.img
   > * images/gparted/1.5.0-1-amd64/vmlinuz
-5. Make sure GParted Live _KERNEL_, _APPEND initrd_ and _APPEND fetch_ paths and TFTP server IP match in _<architecture>/pxelinux.cfg/default_ configuration file
+5. Make sure GParted Live _KERNEL_, _APPEND initrd_ and _APPEND fetch_ paths and TFTP server IP match in <architecture>/pxelinux.cfg/default configuration file
 
 More information can be found [here](https://gparted.org/livepxe.php)
 
