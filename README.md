@@ -57,6 +57,11 @@ _tftp_ is the user interface to the Internet TFTP (Trivial File Transfer Protoco
   tftp> quit
   ```
 
+### Notes
+1. Oracle VirtualBox VM requires at least 1024MB of base memory for successful testing.
+2. Oracle VirtualBox VM requires Intel PRO/1000 MT Desktop bridged network adapter for successful BIOS PXE testing.
+3. Oracle VirtualBox VM requires virtio-net bridged network adapter for successful UEFI PXE testing.
+
 ### Alpine Linux instructions
 TODO
 
