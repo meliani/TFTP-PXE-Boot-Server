@@ -61,11 +61,6 @@ _tftp_ is the user interface to the Internet TFTP (Trivial File Transfer Protoco
   tftp> quit
   ```
 
-### Notes
-1. Oracle VirtualBox VM requires at least 1024MB of base memory for successful testing.
-2. Oracle VirtualBox VM requires Intel PRO/1000 MT Desktop bridged network adapter for successful BIOS PXE testing.
-3. Oracle VirtualBox VM requires virtio-net bridged network adapter for successful UEFI PXE testing.
-
 ### Alpine Linux instructions
 TODO
 
@@ -186,3 +181,15 @@ https://wiki.syslinux.org/wiki/index.php?title=PXELINUX
 4. DO NOT use Syslinux versions 5.10 to 6.02 due to known bug which crashes VM
   * https://www.virtualbox.org/ticket/13048
   * https://bugzilla.syslinux.org/show_bug.cgi?id=54
+
+##### dnsmasq DHCP server
+https://dnsmasq.org/docs/dnsmasq-man.html
+
+Run `dnsmasq --help dhcp` to see available DHCP options.
+List of standard DHCP options is [here](https://www.iana.org/assignments/bootp-dhcp-parameters/bootp-dhcp-parameters.xml#options).
+
+##### Testing with Oracle VirtualBox
+1. Oracle VirtualBox VM requires at least 1024MB of base memory for successful testing.
+2. Oracle VirtualBox VM requires Intel PRO/1000 MT Desktop bridged network adapter for successful BIOS PXE testing.
+3. Oracle VirtualBox VM requires virtio-net bridged network adapter for successful UEFI PXE testing.
+4. Use Microsoft Hyper-V Generation 2 VM for successful UEFI PXE testing.
