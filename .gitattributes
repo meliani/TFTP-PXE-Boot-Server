@@ -1,0 +1,7 @@
+* text eol=lf
+
+*.efi binary
+*.c32 binary
+
+*.png binary
+*.svg binary
