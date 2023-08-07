@@ -177,7 +177,6 @@ https://wiki.syslinux.org/wiki/index.php?title=PXELINUX
   > * bios/com32/menu/menu.c32
   > * bios/com32/modules/linux.c32
   > * bios/core/pxelinux.0
-  > * bios/memdisk/memdisk
 4. DO NOT use Syslinux versions 5.10 to 6.02 due to known bug which crashes VM
   * https://www.virtualbox.org/ticket/13048
   * https://bugzilla.syslinux.org/show_bug.cgi?id=54
