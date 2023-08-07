@@ -85,11 +85,11 @@ TODO
   > * images/clonezilla/20230212-kinetic/vmlinuz
 5. Make sure CloneZilla Live x64 _KERNEL_, _APPEND initrd_ and _APPEND fetch_ paths and TFTP/HTTP server IP match in _\<architecture\>/pxelinux.cfg/default_ configuration file, e.g.
   > for TFTP:
-  > KERNEL images/clonezilla/20230212-kinetic/vmlinuz
+  > LINUX images/clonezilla/20230212-kinetic/vmlinuz
   > APPEND initrd=images/clonezilla/20230212-kinetic/initrd.img ... fetch=tftp://192.168.0.123/images/clonezilla/20230212-kinetic/filesystem.squashfs
   > 
   > for HTTP:
-  > KERNEL http://192.168.0.123/clonezilla/20230212-kinetic/vmlinuz
+  > LINUX http://192.168.0.123/clonezilla/20230212-kinetic/vmlinuz
   > APPEND initrd=http://192.168.0.123/clonezilla/20230212-kinetic/initrd.img ... fetch=http://192.168.0.123/clonezilla/20230212-kinetic/filesystem.squashfs
 
 More information can be found [here](https://clonezilla.org/livepxe.php)
@@ -104,11 +104,11 @@ More information can be found [here](https://clonezilla.org/livepxe.php)
   > * images/clonezilla/3.1.0-22-i686/vmlinuz
 5. Make sure CloneZilla Live x32 _KERNEL_, _APPEND initrd_ and _APPEND fetch_ paths and TFTP/HTTP server IP match in _\<architecture\>/pxelinux.cfg/default_ configuration file, e.g.
   > for TFTP:
-  > KERNEL images/clonezilla/3.1.0-22-i686/vmlinuz
+  > LINUX images/clonezilla/3.1.0-22-i686/vmlinuz
   > APPEND initrd=images/clonezilla/3.1.0-22-i686/initrd.img ... fetch=tftp://192.168.0.123/images/clonezilla/3.1.0-22-i686/filesystem.squashfs
   > 
   > for HTTP:
-  > KERNEL http://192.168.0.123/clonezilla/3.1.0-22-i686/vmlinuz
+  > LINUX http://192.168.0.123/clonezilla/3.1.0-22-i686/vmlinuz
   > APPEND initrd=http://192.168.0.123/clonezilla/3.1.0-22-i686/initrd.img ... fetch=http://192.168.0.123/clonezilla/3.1.0-22-i686/filesystem.squashfs
 
 More information can be found [here](https://clonezilla.org/livepxe.php) and [here](https://drbl.org/fine-print.php?path=./faq/2_System/57_why_ubuntu_based_clonezilla_live.faq#57_why_ubuntu_based_clonezilla_live.faq)
@@ -126,11 +126,11 @@ TODO
   > * images/gparted/1.5.0-1-amd64/vmlinuz
 5. Make sure GParted Live x64 _KERNEL_, _APPEND initrd_ and _APPEND fetch_ paths and TFTP/HTTP server IP match in _\<architecture\>/pxelinux.cfg/default_ configuration file, e.g.
   > for TFTP:
-  > KERNEL images/gparted/1.5.0-1-amd64/vmlinuz
+  > LINUX images/gparted/1.5.0-1-amd64/vmlinuz
   > APPEND initrd=images/gparted/1.5.0-1-amd64/initrd.img ... fetch=tftp://192.168.0.123/images/gparted/1.5.0-1-amd64/filesystem.squashfs
   > 
   > for HTTP:
-  > KERNEL http://192.168.0.123/gparted/1.5.0-1-amd64/vmlinuz
+  > LINUX http://192.168.0.123/gparted/1.5.0-1-amd64/vmlinuz
   > APPEND initrd=http://192.168.0.123/gparted/1.5.0-1-amd64/initrd.img ... fetch=http://192.168.0.123/gparted/1.5.0-1-amd64/filesystem.squashfs
 
 More information can be found [here](https://gparted.org/livepxe.php)
@@ -145,11 +145,11 @@ More information can be found [here](https://gparted.org/livepxe.php)
   > * images/gparted/1.5.0-1-i686/vmlinuz
 5. Make sure GParted Live x32 _KERNEL_, _APPEND initrd_ and _APPEND fetch_ paths and TFTP/HTTP server IP match in _\<architecture\>/pxelinux.cfg/default_ configuration file, e.g.
   > for TFTP:
-  > KERNEL images/gparted/1.5.0-1-i686/vmlinuz
+  > LINUX images/gparted/1.5.0-1-i686/vmlinuz
   > APPEND initrd=images/gparted/1.5.0-1-i686/initrd.img ... fetch=tftp://192.168.0.123/images/gparted/1.5.0-1-i686/filesystem.squashfs
   > 
   > for HTTP:
-  > KERNEL http://192.168.0.123/gparted/1.5.0-1-i686/vmlinuz
+  > LINUX http://192.168.0.123/gparted/1.5.0-1-i686/vmlinuz
   > APPEND initrd=http://192.168.0.123/gparted/1.5.0-1-i686/initrd.img ... fetch=http://192.168.0.123/gparted/1.5.0-1-i686/filesystem.squashfs
 
 More information can be found [here](https://gparted.org/livepxe.php) and [here](https://gparted.org/download.php)
