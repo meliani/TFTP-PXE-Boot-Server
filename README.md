@@ -13,17 +13,17 @@ Network (PXE) boot supports the following live CD or installation distros for BI
 * Ubuntu 16.04 (Xenial)
 
 ### Usage
-1. Set up an TFTP server
+1. Set up TFTP server
     * You could use http://ww2.unime.it/flr/tftpserver/ for MacOS
     * Follow [these](http://www.pyrosoft.co.uk/blog/2013/01/13/setting-up-a-pxe-boot-server-on-synology-dsm-4-2-beta/) and [these](https://kb.synology.com/en-us/DSM/tutorial/How_to_implement_PXE_with_Synology_NAS) instructions on Synology NAS
-2. Optionally set up an HTTP server pointing to _images/_ directory
+2. Optionally set up HTTP server pointing to _images/_ directory
     * Debug HTTP server as per instructions [below](#Debug-HTTP-server)
-3. Check out this project code on the TFTP server  
+3. Check out this project code on TFTP server
     `git clone --depth 1 git@github.com:paulmaunders/TFTP-PXE-Boot-Server.git .`
 4. Ensure TFTP server root points to this project directory
     * Debug TFTP server as per instructions [below](#Debug-TFTP-server)
-5. Set up your DHCP to use TFTP server
-    * Use DHCP option 66 "next-server" if located on a different IP to the DHCP server
+5. Configure your DHCP to use TFTP server
+    * Use DHCP option 66 "next-server" if located on a different IP to DHCP server
     * DHCP should offer the PXELINUX.0 as the boot filename (DHCP option 67)
     * Follow [these](https://community.synology.com/enu/forum/2/post/124897) instructions on Synology router
 6. Optionally edit the _\<architecture\>/pxelinux.cfg/default_ files to add your PXE boot options
