@@ -13,25 +13,27 @@ Network (PXE) boot supports the following live CD or installation distros for BI
 * Ubuntu 16.04 (Xenial)
 
 ### Usage
-1. Set up a TFTP server
+1. Set up an TFTP server
     * You could use http://ww2.unime.it/flr/tftpserver/ for MacOS
     * Follow [these](http://www.pyrosoft.co.uk/blog/2013/01/13/setting-up-a-pxe-boot-server-on-synology-dsm-4-2-beta/) and [these](https://kb.synology.com/en-us/DSM/tutorial/How_to_implement_PXE_with_Synology_NAS) instructions on Synology NAS
-2. Check out this project code on the TFTP server  
+2. Optionally set up an HTTP server pointing to _images/_ directory
+    * Debug HTTP server as per instructions [below](#Debug-HTTP-server)
+3. Check out this project code on the TFTP server  
     `git clone --depth 1 git@github.com:paulmaunders/TFTP-PXE-Boot-Server.git .`
-3. Ensure TFTP server root points at this project folder
+4. Ensure TFTP server root points to this project directory
     * Debug TFTP server as per instructions [below](#Debug-TFTP-server)
-4. Set up your DHCP to use TFTP server
+5. Set up your DHCP to use TFTP server
     * Use DHCP option 66 "next-server" if located on a different IP to the DHCP server
     * DHCP should offer the PXELINUX.0 as the boot filename (DHCP option 67)
     * Follow [these](https://community.synology.com/enu/forum/2/post/124897) instructions on Synology router
-5. Optionally edit the _\<architecture\>/pxelinux.cfg/default_ files to add your PXE boot options
-6. Create symlinks to images in this project folder
+6. Optionally edit the _\<architecture\>/pxelinux.cfg/default_ files to add your PXE boot options
+7. Create symlinks to images in this project directory
     ```shell
     user:~$ ln -s <absolute path>/images/ bios/images
     user:~$ ln -s <absolute path>/images/ efi32/images
     user:~$ ln -s <absolute path>/images/ efi64/images
     ```
-7. Download and configure each bootstrap program you require as per instructions. Bootstraps are **not** committed to this repository due to their size.
+8. Download and configure each bootstrap program you require as per instructions. Bootstraps are **not** committed to this repository due to their size.
     * Alpine Linux (TODO)
     * CentOS (TODO)
     * [CloneZilla Live 64-bit](#CloneZilla-Live-64-bit-instructions)
@@ -59,6 +61,12 @@ _tftp_ is the user interface to the Internet TFTP (Trivial File Transfer Protoco
   getting from 192.168.0.123:bios/pxelinux.0 to pxelinux.0 [netascii]
   Received 46995 bytes in 0.2 seconds [1879800 bits/sec]
   tftp> quit
+  ```
+
+### Debug HTTP server
+1. Download a file placed in _images/_ directory
+  ```shell
+  user:~$ wget http://192.168.0.123/somefile.txt
   ```
 
 ### Alpine Linux instructions
